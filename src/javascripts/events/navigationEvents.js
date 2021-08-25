@@ -1,4 +1,8 @@
+import { showAuthors } from '../components/authors';
+import { showBooks } from '../components/books';
 import signOut from '../helpers/auth/signOut';
+import { getAuthor } from '../helpers/data/authorData';
+import { getBooks } from '../helpers/data/bookData';
 
 // navigation events
 const navigationEvents = () => {
@@ -13,7 +17,7 @@ const navigationEvents = () => {
 
   // ALL BOOKS
   document.querySelector('#all-books').addEventListener('click', () => {
-    console.warn('All Books');
+    getBooks().then((booksArray) => showBooks(booksArray)); // can also write as getBooks().then(showBooks);
   });
 
   // SEARCH
@@ -29,6 +33,11 @@ const navigationEvents = () => {
 
       document.querySelector('#search').value = '';
     }
+  });
+
+  // Show Authors Only
+  document.querySelector('#authors').addEventListener('click', () => {
+    getAuthor().then((authorsArray) => showAuthors(authorsArray));
   });
 
   // FIXME: STUDENTS Create an event listener for the Authors
