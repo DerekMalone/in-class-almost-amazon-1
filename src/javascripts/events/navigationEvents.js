@@ -1,7 +1,7 @@
 import { showAuthors } from '../components/authors';
 import { showBooks } from '../components/books';
 import signOut from '../helpers/auth/signOut';
-import { getAuthor } from '../helpers/data/authorData';
+import { getAuthor, favAuthors } from '../helpers/data/authorData';
 import { getBooks, booksOnSale } from '../helpers/data/bookData';
 
 // navigation events
@@ -43,7 +43,8 @@ const navigationEvents = () => {
 
   // Favorite Authors
   document.querySelector('#fav-authors').addEventListener('click', () => {
-    console.warn('clicked');
+    console.warn('Favorite Authors');
+    favAuthors().then(showAuthors);
   });
 
   // FIXME: STUDENTS Create an event listener for the Authors

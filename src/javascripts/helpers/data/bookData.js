@@ -12,6 +12,14 @@ const getBooks = () => new Promise((resolve, reject) => {
 });
 
 // DELETE BOOK
+const deleteBook = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/books/${firebaseKey}.json`)
+    .then(() => {
+      getBooks().then((response) => resolve(response));
+    })
+    .catch(reject);
+});
+
 // CREATE BOOK
 const createBook = (bookObj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/books.json`, bookObj)
@@ -34,4 +42,6 @@ const booksOnSale = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error)); // can also write as .catch(reject)
 });
 
-export { getBooks, createBook, booksOnSale };
+export {
+  getBooks, createBook, booksOnSale, deleteBook
+};
