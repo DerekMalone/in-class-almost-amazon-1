@@ -27,4 +27,11 @@ const createBook = (bookObj) => new Promise((resolve, reject) => {
 // UPDATE BOOK
 // SEARCH BOOKS
 
-export { getBooks, createBook };
+// FILTER BOOKS ON SALE
+const booksOnSale = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/books.json?orderBy="sale"&equalTo=true`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error)); // can also write as .catch(reject)
+});
+
+export { getBooks, createBook, booksOnSale };
