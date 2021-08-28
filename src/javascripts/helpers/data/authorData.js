@@ -33,7 +33,20 @@ const createAuthor = (authorObj) => new Promise((resolve, reject) => {
         });
     }).catch((error) => reject(error));
 });
+// GET SINGLE AUTHOR
+// GET SINGLE BOOK
+const getSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/authors/${firebaseKey}.json`)
+    .then((response) => resolve(response.data)) // use data if getting multiple items back
+    .catch(reject);
+});
 // UPDATE AUTHOR
+// UPDATE BOOK
+const updateAuthor = (authorObj) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/authors/${authorObj.firebaseKey}.json`, authorObj)
+    .then(() => getAuthor().then(resolve))
+    .catch(reject);
+});
 // SEARCH AUTHORS
 
 // FILTER ON FAVORITE AUTHORS
@@ -44,5 +57,5 @@ const favAuthors = () => new Promise((resolve, reject) => {
 });
 
 export {
-  getAuthor, createAuthor, favAuthors, deleteAuthor
+  getAuthor, createAuthor, favAuthors, deleteAuthor, getSingleAuthor, updateAuthor
 };

@@ -4,7 +4,9 @@ import {
   createBook, deleteBook, getSingleBook, updateBook
 } from '../helpers/data/bookData';
 import addAuthorForm from '../components/forms/addAuthorForm';
-import { createAuthor, deleteAuthor } from '../helpers/data/authorData';
+import {
+  createAuthor, deleteAuthor, getSingleAuthor, updateAuthor
+} from '../helpers/data/authorData';
 import { showAuthors } from '../components/authors';
 
 const domEvents = () => {
@@ -93,7 +95,26 @@ const domEvents = () => {
 
       createAuthor(authorObject).then((authorsArray) => showAuthors(authorsArray));
     }
+
+    // CLICK EVENT FOR EDITING/UPDATING A Author
+    if (e.target.id.includes('edit-author-btn')) {
+      const [, id] = e.target.id.split('--');
+      console.warn(id);
+      getSingleAuthor(id).then((authorObj) => addAuthorForm(authorObj));
+    }
     // ADD CLICK EVENT FOR EDITING AN AUTHOR
+    if (e.target.id.includes('update-author')) {
+      e.preventDefault();
+      const [, firebaseKey] = e.target.id.split('--');
+      const authorObject = {
+        first_name: document.querySelector('#first-name').value,
+        last_name: document.querySelector('#last-name').value,
+        email: document.querySelector('#email').value,
+        firebaseKey
+      };
+
+      updateAuthor(authorObject).then(showAuthors);
+    }
   });
 };
 
