@@ -1,50 +1,83 @@
 {
-  "-MTpclfzY9GLtKDsDYTs": {
-    "firebaseKey": "-MTpclfzY9GLtKDsDYTs",
-    "price": 25.99,
-    "title": "Fifty Shades of Chicken",
-    "image": "https://firebasestorage.googleapis.com/v0/b/almost-1564e.appspot.com/o/books%2Fchicken.jpg?alt=media&token=77e7cf36-4f72-4ee0-a487-dd1d366ced63",
+  "-MiBsBKGWFEU-yluJkL-" : {
+    "author_id" : "-MiBt86VzkC-EGmJnxjm",
+    "description" : "A Promised Land is Barack Obama’s memoir of his early political career and the first two years of his presidency. Obama takes us on his journey from relative obscurity as a biracial kid from Hawaii to becoming a transformative figure as the nation’s first African-American president. At every step of his career, Obama was guided by a deep faith in the fundamental unity of Americans; the potential and promise of America; the necessity of compromise and seeking common ground; and above all, the power of the democratic system to heal our divisions and effect real change for ordinary people.",
+    "firebaseKey" : "-MiBsBKGWFEU-yluJkL-",
+    "image" : "https://images-na.ssl-images-amazon.com/images/I/91+NBrXG-PL.jpg",
+    "price" : "24.99",
+    "sale" : true,
+    "title" : "A Promised Land"
+  },
+  "-MiBsknNSQ6aBG1-2lQS" : {
+    "author_id" : "-MiBsfuTafbEQ7eAULxV",
+    "description" : "",
+    "firebaseKey" : "-MiBsknNSQ6aBG1-2lQS",
+    "image" : "https://images-na.ssl-images-amazon.com/images/I/A1agLFsWkOL.jpg",
+    "price" : "12.99",
+    "sale" : false,
+    "title" : "Children of Blood and Bone"
+  },
+  "-MiBuCve4-r_H-RLUOh2" : {
+    "author_id" : "-MiBtwf1BwN9pGavQeR3",
+    "description" : "THE CLASSIC NATIONAL BESTSELLER\n\n\"A wonderful, splendid book—a book that should be read by every American, student or otherwise, who wants to understand his country, its true history, and its hope for the future.\" –Howard Fast\n\nHistorian Howard Zinn’s A People’s History of the United States chronicles American history from the bottom up, throwing out the official narrative taught in schools—with its emphasis on great men in high places—to focus on the street, the home, and the workplace.\n\nKnown for its lively, clear prose as well as its scholarly research, it is the only volume to tell America's story from the point of view of—and in the words of—America's women, factory workers, African-Americans, Native Americans, the working poor, and immigrant laborers. As Zinn shows, many of our country's greatest battles—the fights for a fair wage, an eight-hour workday, child-labor laws, health and safety standards, universal suffrage, women's rights, racial equality—were carried out at the grassroots level, against bloody resistance.\n\nCovering Christopher Columbus's arrival through President Clinton's first term, A People's History of the United States features insightful analysis of the most important events in our history. This edition also includes an introduction by Anthony Arnove, who wrote, directed, and produced The People Speak with Zinn and who coauthored, with Zinn, Voices of a People’s History of the United States.",
+    "firebaseKey" : "-MiBuCve4-r_H-RLUOh2",
+    "image" : "https://images-na.ssl-images-amazon.com/images/I/51529Lfc2ML.jpg",
+    "price" : "30.00",
+    "sale" : false,
+    "title" : "A People's History of the United States of America"
+  },
+  "-MiBuU13EaKmGOMjJF-X" : {
+    "author_id" : "-MiBuOfHv9NCKB_cneij",
+    "description" : "This is a description of the book",
+    "firebaseKey" : "-MiBuU13EaKmGOMjJF-X",
+    "image" : "https://images-na.ssl-images-amazon.com/images/I/81rRRmZZvZL.jpg",
+    "price" : "15.89",
+    "sale" : false,
+    "title" : "Concrete Rose"
+  },
+  "-MiBuqoYjFwbXyA8oiiw" : {
+    "author_id" : "-MiBulenBnY8by9Xn7q1",
+    "firebaseKey" : "-MiBuqoYjFwbXyA8oiiw",
+    "description" : "",
+    "image" : "https://images-na.ssl-images-amazon.com/images/I/A1Cu4ywUeyL.jpg",
+    "price" : "25.00",
+    "sale" : true,
+    "title" : "The Underground Railroad"
+  },
+  "-MiBvEFJTI3FmTzDu_3V" : {
+    "author_id" : "-MiBv9_aOEJQWoobjz_U",
+    "firebaseKey" : "-MiBvEFJTI3FmTzDu_3V",
+    "description" : "",
+    "image" : "https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_360,c_scale/jackets/9781526622402.jpg",
+    "price" : "12.99",
+    "sale" : true,
+    "title" : "Hood Feminism"
+  },
+  "-MiBvW8ME_DvO2GzwQ8D" : {
+    "author_id" : "-MiBvQiWr6XNwNa1i3-0",
+    "firebaseKey" : "-MiBvW8ME_DvO2GzwQ8D",
+    "description" : "",
+    "image" : "https://images-na.ssl-images-amazon.com/images/I/81Uf1dTjfQL.jpg",
+    "price" : "15.00",
+    "sale" : false,
+    "title" : "A Blade So Black"
+  },
+  "-MiBvf3bIyooE6x4nLLB" : {
+    "author_id" : "-MiBvQiWr6XNwNa1i3-0",
+    "firebaseKey" : "-MiBvf3bIyooE6x4nLLB",
+    "description" : "",
+    "image" : "https://m.media-amazon.com/images/I/51BZdlchEsL.jpg",
+    "price" : "14.99",
+    "sale" : false,
+    "title" : "A Dream So Dark"
+  },
+  "-MiBwAF5wOY00AYJm7cR": {
+    "author_id": "-MiBw4tCvNZd23yTVDQw",
+    "firebaseKey": "-MiBwAF5wOY00AYJm7cR",
+    "description" : "",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/61GSqXVhhKL.jpg",
+    "price": "12.00",
     "sale": false,
-    "author_id": "-MTpcli73mfiIqW0lpPe"
-  },
-  "-MTpclg-BDWqEqyNcYzx": {
-    "firebaseKey": "-MTpclg-BDWqEqyNcYzx",
-    "price": 15.45,
-    "title": "Fifty Shades of Bacon",
-    "image": "https://firebasestorage.googleapis.com/v0/b/almost-1564e.appspot.com/o/books%2Fbacon.jpg?alt=media&token=4641983b-59a5-4d1f-8e8e-7f2114f02455",
-    "sale": true,
-    "author_id": "-MTpcli9kmjpvbdr-ckb"
-  },
-  "-MTpclg1yedrHyxkTEvt": {
-    "firebaseKey": "-MTpclg1yedrHyxkTEvt",
-    "price": 5,
-    "title": "Fifty Shades of Kale",
-    "image": "https://firebasestorage.googleapis.com/v0/b/almost-1564e.appspot.com/o/books%2Fkale.jpg?alt=media&token=cce4b2dc-4ee5-4e80-93a3-c33d3817880e",
-    "sale": false,
-    "author_id": "-MTpcliA_-GtWZHpb8sf"
-  },
-  "-MTpclg3RLFK-14Pu-YM": {
-    "firebaseKey": "-MTpclg3RLFK-14Pu-YM",
-    "price": 2,
-    "title": "Fifteen Shades for Grey",
-    "image": "https://firebasestorage.googleapis.com/v0/b/almost-1564e.appspot.com/o/books%2Fanimals.jpeg?alt=media&token=bf85ace1-db04-42c1-82d5-56ce58979721",
-    "sale": false,
-    "author_id": "-MTpcliCeUeUNMpZ-Kog"
-  },
-  "-MTpclg6Ax7Lg5iq3tOs": {
-    "firebaseKey": "-MTpclg6Ax7Lg5iq3tOs",
-    "price": 50,
-    "title": "Fifty Shades of Zombie",
-    "image": "https://firebasestorage.googleapis.com/v0/b/almost-1564e.appspot.com/o/books%2Fzombie.jpg?alt=media&token=4e350713-95ba-4dc6-8091-c2fd5bb2bb27",
-    "sale": true,
-    "author_id": "-MTpcliDmrp15A1WIE4U"
-  },
-  "-MTpclg4KKMZ4FUaEE2b": {
-    "firebaseKey": "-MTpclg4KKMZ4FUaEE2b",
-    "price": 0.75,
-    "title": "Fifty Shades of Gravy",
-    "image": "https://firebasestorage.googleapis.com/v0/b/almost-1564e.appspot.com/o/books%2Fgravy.jpg?alt=media&token=1cdec29d-f7d5-4100-bd09-684fe57235e4",
-    "sale": false,
-    "author_id": "-MTpcliGnhDSsyvILIoJ"
+    "title": "The Fire Next Time"
   }
 }
