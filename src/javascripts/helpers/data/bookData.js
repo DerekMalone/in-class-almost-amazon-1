@@ -55,6 +55,12 @@ const booksOnSale = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error)); // can also write as .catch(reject)
 });
 
+const getAuthorBooks = (authorId) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/books.json?orderBy="author_id"&equalTo="${authorId}"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error)); // can also write as .catch(reject)
+});
+
 export {
-  getBooks, createBook, booksOnSale, deleteBook, getSingleBook, updateBook
+  getBooks, createBook, booksOnSale, deleteBook, getSingleBook, updateBook, getAuthorBooks
 };
