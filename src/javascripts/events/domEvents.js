@@ -8,7 +8,7 @@ import {
 import { showBooks } from '../components/books';
 import addAuthorForm from '../components/forms/addAuthorForm';
 import { showAuthors } from '../components/authors';
-import { createAuthor, updateAuthor } from '../helpers/data/authorData';
+import { createAuthor, updateAuthor, deleteAuthor } from '../helpers/data/authorData';
 import viewBook from '../components/forms/viewBook';
 import viewAuthor from '../components/forms/viewAuthor';
 import { viewBookDetails, viewAuthorsBooks } from '../helpers/data/mergedData';
@@ -78,6 +78,11 @@ const domEvents = () => {
     }
 
     // ADD CLICK EVENT FOR DELETING AN AUTHOR
+    if (e.target.id.includes('delete-author')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      console.warn(firebaseKey);
+      deleteAuthor(firebaseKey).then();
+    }
     // ADD CLICK EVENT FOR SHOWING FORM FOR ADDING AN AUTHOR
     if (e.target.id.includes('add-author-btn')) {
       addAuthorForm();
@@ -110,6 +115,7 @@ const domEvents = () => {
       updateAuthor(authorObject).then(showAuthors);
     }
 
+    // VIEW AUTHOR BUTTON
     if (e.target.id.includes('view-author-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       // console.warn(firebaseKey);

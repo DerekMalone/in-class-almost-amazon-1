@@ -1,5 +1,5 @@
-import { getAuthorBooks, getSingleBook } from './bookData';
-import { getSingleAuthor } from './authorData';
+import { deleteBook, getAuthorBooks, getSingleBook } from './bookData';
+import { deleteAuthor, getSingleAuthor } from './authorData';
 
 // const viewBookDetails = (bookfirebaseKey) => new Promise((resolve, reject) => {
 //   getSingleBook(bookfirebaseKey)
@@ -18,17 +18,43 @@ const viewBookDetails = async (bookfirebaseKey) => {
   return { authorObject, ...book };
 };
 
+// const viewAuthorsBooks = (authorfirebaseKey) => new Promise((resolve, reject) => {
+//   getSingleAuthor(authorfirebaseKey)
+//     .then((authorObj) => {
+//       getAuthorBooks(authorObj.firebaseKey)
+//         .then((bookObj) => {
+//           console.warn(getAuthorBooks());
+//           resolve({ bookObj, ...authorObj });
+//         });
+//     }).catch(reject);
+// });
+
 const viewAuthorsBooks = (authorfirebaseKey) => new Promise((resolve, reject) => {
   getSingleAuthor(authorfirebaseKey)
     .then((authorObj) => {
-      console.warn(authorObj);
       getAuthorBooks(authorObj.firebaseKey)
         .then((bookObj) => {
           console.warn(getAuthorBooks());
-          console.warn(bookObj);
           resolve({ bookObj, ...authorObj });
         });
     }).catch(reject);
 });
 
-export { viewBookDetails, viewAuthorsBooks };
+// const viewAuthorsBooks = async (authorfirebaseKey) => {
+//   const authorObject = await getSingleAuthor(authorfirebaseKey);
+//   console.warn(authorObject);
+//   const book = await getAuthorBooks(authorObject.firebaseKey);
+//   console.warn(book);
+//   return { authorObject, ...book };
+// };
+
+const deleteAuthorBooks = (authorId) => new Promise((resolve, reject) => {
+  getAuthorBooks(authorId).then((authorsBookArray) => {
+    const deleteBooks = authorsBookArray.map((book) => deleteBook(book.firebaseKey));
+    // console.warn(deleteBooks);
+
+    Promise.all(...deleteBooks).then(() => resolve(deleteAuthor(authorId)));
+  }).catch(reject);
+});
+
+export { viewBookDetails, viewAuthorsBooks, deleteAuthorBooks };
