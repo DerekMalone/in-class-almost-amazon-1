@@ -18,17 +18,6 @@ const viewBookDetails = async (bookfirebaseKey) => {
   return { authorObject, ...book };
 };
 
-// const viewAuthorsBooks = (authorfirebaseKey) => new Promise((resolve, reject) => {
-//   getSingleAuthor(authorfirebaseKey)
-//     .then((authorObj) => {
-//       getAuthorBooks(authorObj.firebaseKey)
-//         .then((bookObj) => {
-//           console.warn(getAuthorBooks());
-//           resolve({ bookObj, ...authorObj });
-//         });
-//     }).catch(reject);
-// });
-
 const viewAuthorsBooks = (authorfirebaseKey) => new Promise((resolve, reject) => {
   getSingleAuthor(authorfirebaseKey)
     .then((authorObj) => {

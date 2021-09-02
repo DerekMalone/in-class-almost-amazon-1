@@ -3,7 +3,7 @@ import {
   createBook,
   deleteBook,
   getSingleBook,
-  updateBook
+  updateBook,
 } from '../helpers/data/bookData';
 import { showBooks } from '../components/books';
 import addAuthorForm from '../components/forms/addAuthorForm';
@@ -118,7 +118,7 @@ const domEvents = () => {
     // VIEW AUTHOR BUTTON
     if (e.target.id.includes('view-author-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      // console.warn(firebaseKey);
+      console.warn(firebaseKey);
       viewAuthorsBooks(firebaseKey).then(viewAuthor);
     }
   });
