@@ -6,8 +6,8 @@ import firebaseConfig from '../../../api/apiKeys';
 const dbUrl = firebaseConfig.databaseURL;
 
 // GET AUTHORS
-const getAuthor = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/authors.json`)
+const getAuthor = (userId) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/authors/.json?orderBy="uid"&equalTo="${userId}"`)
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });

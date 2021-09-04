@@ -5,7 +5,7 @@ import { getAuthor, favAuthors } from '../helpers/data/authorData';
 import { getBooks, booksOnSale } from '../helpers/data/bookData';
 
 // navigation events
-const navigationEvents = () => {
+const navigationEvents = (userId) => {
   // LOGOUT BUTTON
   document.querySelector('#logout-button')
     .addEventListener('click', signOut);
@@ -18,7 +18,7 @@ const navigationEvents = () => {
 
   // ALL BOOKS
   document.querySelector('#all-books').addEventListener('click', () => {
-    getBooks().then(showBooks); // can also write as getBooks().then(showBooks);
+    getBooks(userId).then(showBooks); // can also write as getBooks().then(showBooks);
   });
 
   // SEARCH
@@ -38,7 +38,7 @@ const navigationEvents = () => {
 
   // Show Authors Only
   document.querySelector('#authors').addEventListener('click', () => {
-    getAuthor().then((authorsArray) => showAuthors(authorsArray));
+    getAuthor(userId).then((authorsArray) => showAuthors(authorsArray));
   });
 
   // Favorite Authors
