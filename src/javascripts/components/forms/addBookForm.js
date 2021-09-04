@@ -1,7 +1,7 @@
 import clearDom from '../../helpers/clearDOM';
 import selectAuthor from './selectAuthor';
 
-const addBookForm = (obj = {}) => {
+const addBookForm = (userId, obj = {}) => {
   clearDom();
   document.querySelector('#form-container').innerHTML = `
     <form id="book-form" class="mb-4">
@@ -32,7 +32,7 @@ const addBookForm = (obj = {}) => {
       </button>
     </form>`;
 
-  selectAuthor(`${obj.author_id || ''}`);
+  selectAuthor(userId, `${obj.author_id || ''}`);
 };
 
 export default addBookForm;

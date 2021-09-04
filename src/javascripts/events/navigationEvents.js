@@ -13,7 +13,7 @@ const navigationEvents = (userId) => {
   // BOOKS ON SALE
   document.querySelector('#sale-books').addEventListener('click', () => {
     console.warn('Sale Books');
-    booksOnSale().then(showBooks);
+    booksOnSale(userId).then(showBooks);
   });
 
   // ALL BOOKS
