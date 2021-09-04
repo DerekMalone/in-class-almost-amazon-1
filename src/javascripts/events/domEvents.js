@@ -4,7 +4,7 @@ import {
   createBook,
   deleteBook,
   getSingleBook,
-  updateBook,
+  updateBook
 } from '../helpers/data/bookData';
 import { showBooks } from '../components/books';
 import addAuthorForm from '../components/forms/addAuthorForm';
@@ -13,6 +13,7 @@ import { createAuthor, updateAuthor } from '../helpers/data/authorData';
 import viewBook from '../components/forms/viewBook';
 import viewAuthor from '../components/forms/viewAuthor';
 import { viewBookDetails, viewAuthorsBooks, deleteAuthorBooks } from '../helpers/data/mergedData';
+import addReviewForm from '../components/forms/addReviewForm';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -42,13 +43,14 @@ const domEvents = () => {
         price: document.querySelector('#price').value,
         description: document.querySelector('#description').value,
         sale: document.querySelector('#sale').checked,
-        author_id: document.querySelector('#author_id').value
+        author_id: document.querySelector('#author_id').value,
+        review: document.querySelector('#review').value
       };
 
       createBook(bookObject).then((booksArray) => showBooks(booksArray));
     }
 
-    // CLICK EVENT EDITING/UPDATING A BOOK
+    // CLICK EVENT UPDATING A BOOK
     if (e.target.id.includes('edit-book-btn')) {
       const [, id] = e.target.id.split('--');
 
@@ -72,6 +74,24 @@ const domEvents = () => {
       updateBook(bookObject).then(showBooks);
     }
 
+    // CLICK EVENT FOR ADDING A REVIEW
+    if (e.target.id.includes('review-book-btn')) {
+      const [, id] = e.target.id.split('--');
+      getSingleBook(id).then(addReviewForm);
+    }
+
+    // CLICK EVENT TO ADD REVIEW TO BOOK
+    if (e.target.id.includes('submit-review')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      const bookObj = {
+        review: document.querySelector('#review').value,
+        firebaseKey
+      };
+
+      updateBook(bookObj).then(viewBook);
+    }
+
+    // VIEW BOOKS
     if (e.target.id.includes('view-book-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       console.warn(firebaseKey);

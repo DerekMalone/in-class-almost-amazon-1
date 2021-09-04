@@ -8,7 +8,7 @@ const viewAuthor = (obj) => {
         </div>
       </div>
       <div class="text-white ms-5 details">
-        <h5>${obj.first_name} ${obj.last_name}</h5>
+        <h2>${obj.first_name} ${obj.last_name}</h2>
         <p>${obj.email}</p>
         <hr>      
       </div>

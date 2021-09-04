@@ -8,6 +8,7 @@ const viewBook = (obj) => {
         <img src=${obj.image} alt=${obj.title} style="width: 300px;">
         <div class="mt-5">
           <i id="edit-book-btn--${obj.firebaseKey}" class="fas fa-edit btn btn-info"></i>
+          <i id="review-book-btn--${obj.firebaseKey}" class="fas fa-couch btn btn-info"></i>
           <i id="delete-book--${obj.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
         </div>
       </div>
@@ -18,8 +19,20 @@ const viewBook = (obj) => {
       <p>${obj.description || 'Please add a description for this book.'}</p>
       <hr>
       <p>PRICE: ${obj.sale ? `$${obj.price} <span class="badge bg-info sale-badge"><i class="fa fa-bell" aria-hidden="true"></i> Sale</span>` : `$${obj.price}`}</p>      
+      <hr>
+      <div id="reviews-for-book">${obj.review || 'Be the first to add a review for this book.'}</div>
     </div>
     </div>`;
+  obj.forEach((element) => {
+    document.querySelector('#reviews-for-book').innerHTML += `
+      <div class="card">
+    <div class="card-body" style="height: 180px;">
+        <p class="card-text">${element.review}</p>
+        <hr>
+    </div>
+  </div>
+      `;
+  });
 };
 
 export default viewBook;

@@ -20,6 +20,13 @@ const deleteBook = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// ADD A REVIEW TO A BOOK
+// const addReview = (bookObj) => new Promise((resolve, reject) => {
+//   axios.patch(`${dbUrl}/books/${bookObj.firebaseKey}.json`, bookObj)
+//     .then(() => getBooks().then(resolve))
+//     .catch(reject);
+// });
+
 // CREATE BOOK
 const createBook = (bookObj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/books.json`, bookObj)
@@ -32,6 +39,7 @@ const createBook = (bookObj) => new Promise((resolve, reject) => {
         });
     }).catch((error) => reject(error));
 });
+
 // GET SINGLE BOOK
 const getSingleBook = (firebaseKey) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/books/${firebaseKey}.json`)
@@ -62,5 +70,11 @@ const getAuthorBooks = (authorId) => new Promise((resolve, reject) => {
 });
 
 export {
-  getBooks, createBook, booksOnSale, deleteBook, getSingleBook, updateBook, getAuthorBooks
+  getBooks,
+  createBook,
+  booksOnSale,
+  deleteBook,
+  getSingleBook,
+  updateBook,
+  getAuthorBooks,
 };

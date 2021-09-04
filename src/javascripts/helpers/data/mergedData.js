@@ -18,6 +18,7 @@ const viewBookDetails = async (bookfirebaseKey) => {
   return { authorObject, ...book };
 };
 
+// DISPLAYS ALL BOOKS THAT AN AUTHOR HAS WRITTEN WHEN VIEWING THE AUTHOR
 const viewAuthorsBooks = (authorfirebaseKey) => new Promise((resolve, reject) => {
   getSingleAuthor(authorfirebaseKey)
     .then((authorObj) => {
@@ -31,9 +32,7 @@ const viewAuthorsBooks = (authorfirebaseKey) => new Promise((resolve, reject) =>
 
 // const viewAuthorsBooks = async (authorfirebaseKey) => {
 //   const authorObject = await getSingleAuthor(authorfirebaseKey);
-//   console.warn(authorObject);
 //   const book = await getAuthorBooks(authorObject.firebaseKey);
-//   console.warn(book);
 //   return { authorObject, ...book };
 // };
 
