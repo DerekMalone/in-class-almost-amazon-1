@@ -6,17 +6,17 @@ import firebaseConfig from '../../../api/apiKeys';
 const dbUrl = firebaseConfig.databaseURL;
 
 // GET AUTHORS
-const getAuthor = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/authors.json`)
+const getAuthor = (userId) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/authors/.json?orderBy="uid"&equalTo="${userId}"`)
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
 
 // DELETE AUTHOR
-const deleteAuthor = (firebaseKey) => new Promise((resolve, reject) => {
+const deleteAuthor = (firebaseKey, userId) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/authors/${firebaseKey}.json`)
     .then(() => {
-      getAuthor().then((response) => resolve(response));
+      getAuthor(userId).then((response) => resolve(response));
     })
     .catch(reject);
 });
@@ -29,7 +29,7 @@ const createAuthor = (authorObj) => new Promise((resolve, reject) => {
 
       axios.patch(`${dbUrl}/authors/${response.data.name}.json`, body)
         .then(() => {
-          getAuthor().then((authorsArray) => resolve(authorsArray)); // can also be written as getAuthor().then(resolve);
+          getAuthor(authorObj.uid).then((authorsArray) => resolve(authorsArray)); // can also be written as getAuthor().then(resolve);
         });
     }).catch((error) => reject(error));
 });
@@ -41,19 +41,20 @@ const getSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 // UPDATE AUTHOR
-// UPDATE BOOK
-const updateAuthor = (authorObj) => new Promise((resolve, reject) => {
+const updateAuthor = (authorObj, userId) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/authors/${authorObj.firebaseKey}.json`, authorObj)
-    .then(() => getAuthor().then(resolve))
+    .then(() => getAuthor(userId).then(resolve))
     .catch(reject);
 });
 // SEARCH AUTHORS
 
 // FILTER ON FAVORITE AUTHORS
-const favAuthors = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/authors.json?orderBy="favorite"&equalTo=true`)
-    .then((response) => resolve(Object.values(response.data)))
-    .catch((error) => reject(error)); // can also write as .catch(reject)
+const favAuthors = (userId) => new Promise((resolve, reject) => {
+  getAuthor(userId)
+    .then((userAuthers) => {
+      const faveBooks = userAuthers.filter((author) => author.favorite);
+      resolve(faveBooks);
+    }).catch(reject);
 });
 
 export {

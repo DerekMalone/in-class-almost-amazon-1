@@ -4,55 +4,63 @@
     "firebaseKey" : "-MiBsfuTafbEQ7eAULxV",
     "first_name" : "Tomi",
     "last_name" : "Adeyemi",
-    "favorite": true
+    "favorite": true,
+    "uid" : "lKhlXurRpMSFZtGQslYL07gQMGo2"
   },
   "-MiBt86VzkC-EGmJnxjm" : {
     "email" : "ba@obama.com",
     "firebaseKey" : "-MiBt86VzkC-EGmJnxjm",
     "first_name" : "Barack",
     "last_name" : "Obama",
-    "favorite": true
+    "favorite": true,
+    "uid" : "lKhlXurRpMSFZtGQslYL07gQMGo2"
   },
   "-MiBtwf1BwN9pGavQeR3" : {
     "email" : "hz@zinn.com",
     "firebaseKey" : "-MiBtwf1BwN9pGavQeR3",
     "first_name" : "Howard",
     "last_name" : "Zinn",
-    "favorite": false
+    "favorite": false,
+    "uid" : "lKhlXurRpMSFZtGQslYL07gQMGo2"
   },
   "-MiBuOfHv9NCKB_cneij" : {
     "email" : "at@thomas.com",
     "firebaseKey" : "-MiBuOfHv9NCKB_cneij",
     "first_name" : "Angie",
     "last_name" : "Thomas",
-    "favorite": false
+    "favorite": false,
+    "uid" : "lKhlXurRpMSFZtGQslYL07gQMGo2"
   },
   "-MiBulenBnY8by9Xn7q1" : {
     "email" : "cw@whithead.com",
     "firebaseKey" : "-MiBulenBnY8by9Xn7q1",
     "first_name" : "Colson",
     "last_name" : "Whitehead",
-    "favorite": false
+    "favorite": false,
+    "uid" : "lKhlXurRpMSFZtGQslYL07gQMGo2"
   },
   "-MiBv9_aOEJQWoobjz_U" : {
     "email" : "mk@kendall.com",
     "firebaseKey" : "-MiBv9_aOEJQWoobjz_U",
     "first_name" : "Mikki",
     "last_name" : "Kendall",
-    "favorite": true
+    "favorite": true,
+    "uid" : "lKhlXurRpMSFZtGQslYL07gQMGo2"
   },
   "-MiBvQiWr6XNwNa1i3-0" : {
     "email" : "lm@lm.com",
     "firebaseKey" : "-MiBvQiWr6XNwNa1i3-0",
     "first_name" : "L.L",
     "last_name" : "McKinney",
-    "favorite": true
+    "favorite": true,
+    "uid" : "lKhlXurRpMSFZtGQslYL07gQMGo2"
   },
   "-MiBw4tCvNZd23yTVDQw" : {
     "email" : "jb@baldwin.com",
     "firebaseKey" : "-MiBw4tCvNZd23yTVDQw",
     "first_name" : "James",
     "last_name" : "Baldwin",
-    "favorite": false
+    "favorite": false,
+    "uid" : "223"
   }
 }
