@@ -101,7 +101,7 @@ const domEvents = (userId) => {
         email: document.querySelector('#email').value,
         first_name: document.querySelector('#first_name').value,
         last_name: document.querySelector('#last_name').value,
-        favorite: document.querySelector('#favorite').value,
+        favorite: document.querySelector('#favorite').checked,
         uid: userId
       };
 
@@ -122,9 +122,9 @@ const domEvents = (userId) => {
         first_name: document.querySelector('#first_name').value,
         last_name: document.querySelector('#last_name').value,
         email: document.querySelector('#email').value,
-        favorite: document.querySelector('#favorite').value,
-        firebaseKey,
-        uid: userId
+        favorite: document.querySelector('#favorite').checked,
+        uid: userId,
+        firebaseKey
       };
 
       updateAuthor(authorObject, userId).then(showAuthors);
