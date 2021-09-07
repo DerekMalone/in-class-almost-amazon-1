@@ -9,7 +9,7 @@ import {
 import { showBooks } from '../components/books';
 import addAuthorForm from '../components/forms/addAuthorForm';
 import { showAuthors } from '../components/authors';
-import { createAuthor, updateAuthor } from '../helpers/data/authorData';
+import { createAuthor, getSingleAuthor, updateAuthor } from '../helpers/data/authorData';
 import viewBook from '../components/forms/viewBook';
 import viewAuthor from '../components/forms/viewAuthor';
 import { viewBookDetails, viewAuthorsBooks, deleteAuthorBooks } from '../helpers/data/mergedData';
@@ -101,15 +101,20 @@ const domEvents = (userId) => {
         email: document.querySelector('#email').value,
         first_name: document.querySelector('#first_name').value,
         last_name: document.querySelector('#last_name').value,
-        image: document.querySelector('#image').value,
-        description: document.querySelector('#description').value,
+        favorite: document.querySelector('#favorite').value,
         uid: userId
       };
 
       createAuthor(authorObject).then(showAuthors);
     }
-    // ADD CLICK EVENT FOR EDITING AN AUTHOR
+
     if (e.target.id.includes('update-author-btn')) {
+      const [, id] = e.target.id.split('--');
+      getSingleAuthor(id).then((authorObject) => addAuthorForm(authorObject));
+    }
+
+    // ADD CLICK EVENT FOR EDITING AN AUTHOR
+    if (e.target.id.includes('update-author')) {
       e.preventDefault();
       console.warn('clicked');
       const [, firebaseKey] = e.target.id.split('--');
@@ -117,6 +122,7 @@ const domEvents = (userId) => {
         first_name: document.querySelector('#first_name').value,
         last_name: document.querySelector('#last_name').value,
         email: document.querySelector('#email').value,
+        favorite: document.querySelector('#favorite').value,
         firebaseKey,
         uid: userId
       };

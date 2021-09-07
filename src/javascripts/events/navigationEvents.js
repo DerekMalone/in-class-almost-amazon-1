@@ -44,7 +44,7 @@ const navigationEvents = (userId) => {
   // Favorite Authors
   document.querySelector('#fav-authors').addEventListener('click', () => {
     console.warn('Favorite Authors');
-    favAuthors().then(showAuthors);
+    favAuthors(userId).then(showAuthors);
   });
 
   // FIXME: STUDENTS Create an event listener for the Authors
