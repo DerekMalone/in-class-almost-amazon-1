@@ -114,7 +114,7 @@ const domEvents = (userId) => {
     }
 
     // ADD CLICK EVENT FOR EDITING AN AUTHOR
-    if (e.target.id.includes('update-author')) {
+    if (e.target.id.includes('update-single-author')) {
       e.preventDefault();
       console.warn('clicked');
       const [, firebaseKey] = e.target.id.split('--');
